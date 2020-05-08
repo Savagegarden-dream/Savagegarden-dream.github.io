@@ -88,13 +88,13 @@
 	<div style="position:relative;">
 		<img src="./images/2.jpg">	
 		<audio controls id="music1" style="display:none;">
-			<source src="./audio/1.wav" >
+			<source src="./audio/1.mp3" >
 		</audio>
 		<audio controls id="music2" style="display:none;">
-			<source src="./audio/2.wav" >
+			<source src="./audio/2.mp3" >
 		</audio>
 		<audio controls id="music3" style="display:none;">
-			<source src="./audio/3.wav" >
+			<source src="./audio/3.mp3" >
 		</audio>
 		<div class="audio_1" onclick=""></div>
 		<div class="audio_2" onclick=""></div>
@@ -109,6 +109,10 @@
 </div>
 <script>
 
+	document.querySelector(".btn_1").onclick = function (e) {
+		window.location.href = 'abc.html';
+    };
+	
     document.querySelector(".audio_1").onclick = function (e) {
 		bf('music1')
     };
