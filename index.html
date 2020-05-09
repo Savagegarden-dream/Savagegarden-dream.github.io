@@ -58,7 +58,7 @@
 				z-index:9999;
 			}
 			.footer>div{
-				font-size:18px;
+				font-size:20px;
 				font-weight:800;
 				padding:15px 10px;
 				text-align:center;
@@ -136,14 +136,20 @@
 	
     document.querySelector(".audio_1").onclick = function (e) {
 		bf('music1');
+		stop('music2');
+		stop('music3');
 		MtaH5.clickStat("btnaudio");
     };
     document.querySelector(".audio_2").onclick = function (e) {
 		bf('music2');
+		stop('music1');
+		stop('music3');
 		MtaH5.clickStat("btnaudio");
     };
 	document.querySelector(".audio_3").onclick = function (e) {
 		bf('music3');
+		stop('music1');
+		stop('music2');
 		MtaH5.clickStat("btnaudio");
     };
 	
@@ -162,6 +168,13 @@
 	  }else{
 		  audio.pause();// 这个就是暂停
 	  }
+	 } 
+	}
+	
+	function stop( music){
+	 var audio = document.getElementById(music); 
+	 if(audio!==null){             
+		 audio.pause();// 这个就是暂停
 	 } 
 	}
 	

@@ -15,7 +15,7 @@
 			}
 			
 			.need .desc{
-				font-size:13px;
+				font-size:12px;
 				color:#999;
 			}
 			.footer{
@@ -51,7 +51,6 @@
 			}
 
 			.BtnNumDown{
-				margin-left:5px;
 				width: 20px;
 				padding-top: 20px;
 				background-image: url('./images/down.png');
@@ -61,6 +60,7 @@
 			}
 			
 			.BtnNumUp{
+				margin-left: 10px;
 				width: 20px;
 				padding-top: 20px;
 				background-image: url('./images/up.png');
@@ -76,13 +76,14 @@
 			.num{
 				color:red;
 				font-size:18px;
-				padding:0 5px;
+				padding:0 8px;
 			}
 			
 			.total{
 				padding-right:20px;
 				text-align:right;
 				font-size:22px;
+				font-weight: bold;
 			}
 			.total .num{
 				font-size:24px;
@@ -94,7 +95,7 @@
 	<div style="position:relative;">
 		<img src="./images/step1-1.jpg">
 	</div>
-	<div  class="item select">
+	<div  class="item select" style="font-weight:bold;">
 		<div class="Customer NumBtn" data-step="1000">
 			<span>您需要沟通的客户数量</span>
 			<span class="BtnNumUp" onclick=""></span>
@@ -102,7 +103,8 @@
 			<span class="BtnNumDown" onclick=""></span> 人
 		</div>
 		<div class="Time NumBtn" data-step="1">
-			<span>需要几天完成        </span>
+			<span>需要几天完成</span>
+			<span style="width:60px"></span>		
 			<span class="BtnNumUp" onclick=""></span>
 			<span class="BuyNum">1</span>
 			<span class="BtnNumDown" onclick=""></span> 天
@@ -110,13 +112,13 @@
 	</div>
 	
 	<div class="item need">
-		<div><span>系统计算，您需要坐席数量为</span><span class="num">--</span>人/天</div>
+		<div style="font-weight:bold;"><span>系统计算，您需要坐席数量为</span><span class="num">--</span>人/天</div>
 		<div class="desc">（每个外包坐席触达客户1000个/天，每个外包坐席收费 400元/人/天）</div>
 	</div>
 	
 	<div class="item list">
 		<div class="sprice"><span>外包人力服务费</span><span class="num">--</span>元</div>
-		<div class="hprice"><span>话费</span><span class="num">--</span>元</div>
+		<div class="hprice"><span>话费</span><span style="display:inline-block;width:80px"></span><span class="num">--</span>元</div>
 	</div>
 	<div class="item total">
 		<div class="tprice"><span>费用总计</span><span class="num">--</span>元</div>
@@ -185,10 +187,10 @@
 		var Customer =  parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
 		var Time =  parseInt(document.querySelector(".Time .BuyNum").innerHTML);
 		
-		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/1000);
+		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/Time/1000);
 		document.querySelector(".sprice .num").innerHTML = Math.ceil(Customer/1000*400);
-		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.4*0.1);
-		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1000*400) + Math.ceil(Customer*0.4*0.1);
+		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.1);
+		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1000*400) + Math.ceil(Customer*0.1);
     }
 	
 </script>
