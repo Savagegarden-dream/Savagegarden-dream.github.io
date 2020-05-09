@@ -100,7 +100,7 @@
 
 	<div class="footer display_flex flex_c">
 		<div class="flex_1 btn-tel" onclick="">电话咨询</div>
-		<div class="flex_1 btn-order create-order" onclick="">下单试用</div>
+		<div class="flex_1 btn-order btn_create-order" onclick="">下单试用</div>
 	</div>
 </div>
 <script>
@@ -110,6 +110,10 @@
     };
 	
 	document.querySelector(".create-order").onclick = function (e) {
+		window.location.href = 'step1.html';
+    };
+	
+	document.querySelector(".btn_create-order").onclick = function (e) {
 		window.location.href = 'step1.html';
     };
 	
