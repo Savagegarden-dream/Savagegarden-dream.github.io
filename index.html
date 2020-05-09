@@ -58,7 +58,7 @@
 				z-index:9999;
 			}
 			.footer>div{
-				font-size:20px;
+				font-size:18px;
 				font-weight:800;
 				padding:15px 10px;
 				text-align:center;
@@ -121,27 +121,30 @@
 
 	document.querySelector(".btn-tel").onclick = function (e) {
 		window.location.href = 'tel:18509876789';
-		MtaH5.clickStat("btn-tel");
+		MtaH5.clickStat("btntel");
     };
 	
 	document.querySelector(".create-order").onclick = function (e) {
 		window.location.href = 'step1.html';
-		MtaH5.clickStat("btn-next");
+		MtaH5.clickStat("btnnext");
     };
 	
 	document.querySelector(".btn_create-order").onclick = function (e) {
 		window.location.href = 'step1.html';
-		MtaH5.clickStat("btn-next");
+		MtaH5.clickStat("btnnext");
     };
 	
     document.querySelector(".audio_1").onclick = function (e) {
-		bf('music1')
+		bf('music1');
+		MtaH5.clickStat("btnaudio");
     };
     document.querySelector(".audio_2").onclick = function (e) {
-		bf('music2')
+		bf('music2');
+		MtaH5.clickStat("btnaudio");
     };
-	document.querySelector(".audio_2").onclick = function (e) {
-		bf('music3')
+	document.querySelector(".audio_3").onclick = function (e) {
+		bf('music3');
+		MtaH5.clickStat("btnaudio");
     };
 	
 	function rbf(){

@@ -15,7 +15,7 @@
 			}
 			
 			.need .desc{
-				font-size:12px;
+				font-size:13px;
 				color:#999;
 			}
 			.footer{
@@ -186,10 +186,10 @@
 		var Customer =  parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
 		var Time =  parseInt(document.querySelector(".Time .BuyNum").innerHTML);
 		
-		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/Time/1000);
+		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/1000);
 		document.querySelector(".sprice .num").innerHTML = Math.ceil(Customer/1000*400);
-		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.1);
-		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1000*400) + Math.ceil(Customer*0.1);
+		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.4*0.1);
+		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1000*400) + Math.ceil(Customer*0.4*0.1);
     }
 	
 </script>
