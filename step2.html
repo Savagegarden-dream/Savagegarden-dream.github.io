@@ -65,6 +65,13 @@
 			.pop img{
 				padding:50px 10px 10px;
 			}
+			
+			.notice-1{
+				margin-top:20px;
+				color:#02a3ff;
+				text-align:center;
+				text-decoration: underline;
+			}
 
     </style>
 </head>
@@ -93,6 +100,8 @@
 		</div>
 	</div>
 	
+	<div class="notice-1">没有符合您需求的沟通模板？</div>
+	
 	<div class="pop pop-temp-1" style="display:none">
 		<img src="./images/temp-1.jpg"/>
 	</div>
@@ -101,8 +110,11 @@
 		<img src="./images/temp-2.jpg"/>
 	</div>
 	
+	<div class="pop pop-notice-1" style="display:none">
+		<img src="./images/notice-1.png"/>
+	</div>
+	
 	<div class="footer display_flex flex_c">
-		<div class="flex_1 " onclick="">上一步</div>
 		<div class="flex_1 btn-order create-order" onclick="">下一步</div>
 	</div>
 </div>
@@ -115,18 +127,34 @@
 	document.querySelector(".temp-1 img").onclick = function (e) {
 		document.querySelector(".pop-temp-1").style.display = 'block';
 		document.querySelector(".pop-temp-2").style.display = 'none';
+		document.querySelector(".pop-notice-1").style.display = 'none';
     };
 	
 	document.querySelector(".temp-2 img").onclick = function (e) {
 		document.querySelector(".pop-temp-2").style.display = 'block';
 		document.querySelector(".pop-temp-1").style.display = 'none';
+		document.querySelector(".pop-notice-1").style.display = 'none';
     };
 	
 	document.querySelector(".pop-temp-1").onclick = function (e) {
 		document.querySelector(".pop-temp-1").style.display = 'none';
 		document.querySelector(".pop-temp-2").style.display = 'none';
+		document.querySelector(".pop-notice-1").style.display = 'none';
     };
 	document.querySelector(".pop-temp-2").onclick = function (e) {
+		document.querySelector(".pop-temp-1").style.display = 'none';
+		document.querySelector(".pop-temp-2").style.display = 'none';
+		document.querySelector(".pop-notice-1").style.display = 'none';
+    };
+	
+	
+	document.querySelector(".notice-1").onclick = function (e) {
+		document.querySelector(".pop-notice-1").style.display = 'block';
+		document.querySelector(".pop-temp-2").style.display = 'none';
+		document.querySelector(".pop-temp-1").style.display = 'none';
+    };
+	document.querySelector(".pop-notice-1").onclick = function (e) {
+		document.querySelector(".pop-notice-1").style.display = 'none';
 		document.querySelector(".pop-temp-1").style.display = 'none';
 		document.querySelector(".pop-temp-2").style.display = 'none';
     };

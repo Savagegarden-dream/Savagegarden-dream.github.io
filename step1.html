@@ -13,7 +13,11 @@
 				position: relative;
 				padding-bottom:70px;
 			}
-
+			
+			.need .desc{
+				font-size:12px;
+				color:#999;
+			}
 			.footer{
 				position:fixed;
 				left:0;
@@ -64,7 +68,12 @@
 				background-repeat: no-repeat;
 				background-position: center;
 			}
-			
+			span.BuyNum {
+				border: 1px solid #000;
+				padding: 1px 10px;
+				min-width: 60px;
+				text-align: center;
+			}
 			.num{
 				color:red;
 				font-size:18px;
@@ -102,7 +111,8 @@
 	</div>
 	
 	<div class="item need">
-		<div><span>按您的要求，需要的销售外包坐席数量为</span><span class="num">--</span>人，每个外包坐席触达客户1200个/天，每个外包坐席收费 400元/人/天</div>
+		<div><span>系统计算，您需要坐席数量为</span><span class="num">--</span>人/天</div>
+		<div class="desc">（每个外包坐席触达客户1000个/天，每个外包坐席收费 400元/人/天）</div>
 	</div>
 	
 	<div class="item list">
@@ -176,10 +186,10 @@
 		var Customer =  parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
 		var Time =  parseInt(document.querySelector(".Time .BuyNum").innerHTML);
 		
-		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/Time/1200);
-		document.querySelector(".sprice .num").innerHTML = Math.ceil(Customer/1200*400);
+		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/Time/1000);
+		document.querySelector(".sprice .num").innerHTML = Math.ceil(Customer/1000*400);
 		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.1);
-		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1200*400) + Math.ceil(Customer*0.1);
+		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1000*400) + Math.ceil(Customer*0.1);
     }
 	
 </script>
