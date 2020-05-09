@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title></title>
+		<title>信士电话销售外包</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
 		<link rel="stylesheet" type="text/css" href="./css/base.css">
@@ -21,7 +21,6 @@
 				left: 20%;
 				width: 57%;
 				z-index: 2;
-				background:#000
 			}
 			.audio_1{
 				position: absolute;
@@ -30,7 +29,6 @@
 				left: 5%;
 				width: 59%;
 				z-index: 2;
-				background:#000
 			}
 			
 			.audio_2{
@@ -40,7 +38,6 @@
 				left: 5%;
 				width: 59%;
 				z-index: 2;
-				background:#000
 			}
 			
 			.audio_3{
@@ -50,7 +47,6 @@
 				left: 5%;
 				width: 59%;
 				z-index: 2;
-				background:#000
 			}
 			
 			.footer{
@@ -69,7 +65,7 @@
 				border: 1px solid #000;
 				border-width:0 0 0 1px;
 			}
-			.btn-tell{
+			.btn-tel{
 				color:#fff;
 				background:#02a3ff;
 			}
@@ -83,18 +79,18 @@
 <div class="index">
 	<div style="position:relative;">
 		<img src="./images/1.jpg">
-		<div class="btn_1" onclick=""></div>
+		<div class="btn_1 create-order" onclick=""></div>
 	</div>
 	<div style="position:relative;">
 		<img src="./images/2.jpg">	
 		<audio controls id="music1" style="display:none;">
-			<source src="./audio/1.wav" >
+			<source src="./audio/1.mp3" >
 		</audio>
 		<audio controls id="music2" style="display:none;">
-			<source src="./audio/2.wav" >
+			<source src="./audio/2.mp3" >
 		</audio>
 		<audio controls id="music3" style="display:none;">
-			<source src="./audio/3.wav" >
+			<source src="./audio/3.mp3" >
 		</audio>
 		<div class="audio_1" onclick=""></div>
 		<div class="audio_2" onclick=""></div>
@@ -103,12 +99,20 @@
 	<img src="./images/3.jpg">
 
 	<div class="footer display_flex flex_c">
-		<div class="flex_1 btn-tell" onclick="">电话咨询</div>
-		<div class="flex_1 btn-order" onclick="">下单试用</div>
+		<div class="flex_1 btn-tel" onclick="">电话咨询</div>
+		<div class="flex_1 btn-order create-order" onclick="">下单试用</div>
 	</div>
 </div>
 <script>
 
+	document.querySelector(".btn-tel").onclick = function (e) {
+		window.location.href = 'tel:18509876789';
+    };
+	
+	document.querySelector(".create-order").onclick = function (e) {
+		window.location.href = 'step1.html';
+    };
+	
     document.querySelector(".audio_1").onclick = function (e) {
 		bf('music1')
     };

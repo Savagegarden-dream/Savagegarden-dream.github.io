@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>信士电话销售外包</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+		<style>
+			body,html{
+				background:#fff;
+			}
+			.index{
+				position: relative;
+				padding-bottom:70px;
+			}
+
+			.footer{
+				position:fixed;
+				left:0;
+				right:0;
+				bottom:0;
+				background:#fff;
+				z-index:9999;
+			}
+			.footer>div{				
+				padding:15px 10px;
+				text-align:center;
+			}
+			.btn-order {
+				color:#fff;
+				background:#ff9934;
+			}
+			
+			.select{
+				
+			}
+			.item{
+				position:relative;
+				padding: 10px 10px 10px 27px;
+			}
+			.item>div{
+				padding-bottom:10px;
+			}
+			.NumBtn span{
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.BtnNumDown{
+				margin-left:5px;
+				width: 20px;
+				padding-top: 20px;
+				background-image: url('./images/down.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.BtnNumUp{
+				width: 20px;
+				padding-top: 20px;
+				background-image: url('./images/up.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			
+			.num{
+				color:red;
+				font-size:18px;
+				padding:0 5px;
+			}
+			
+			.total{
+				padding-right:20px;
+				text-align:right;
+				font-size:22px;
+			}
+			.total .num{
+				font-size:24px;
+			}
+    </style>
+</head>
+<body>
+<div class="index">
+	<div style="position:relative;">
+		<img src="./images/step1-1.jpg">
+	</div>
+	<div  class="item select">
+		<div class="Customer NumBtn" data-step="1000">
+			<span>您需要沟通的客户数量</span>
+			<span class="BtnNumDown" onclick=""></span>
+			<span class="BuyNum">3000</span>
+			<span class="BtnNumUp" onclick=""></span>人
+		</div>
+		<div class="Time NumBtn" data-step="1">
+			<span>需要几天完成</span>
+			<span class="BtnNumDown" onclick=""></span>
+			<span class="BuyNum">1</span>
+			<span class="BtnNumUp" onclick=""></span>天
+		</div>
+	</div>
+	
+	<div class="item need">
+		<div><span>按您的要求，需要的销售外包坐席数量为</span><span class="num">--</span>人，每个外包坐席触达客户1200个/天，每个外包坐席收费 400元/人/天</div>
+	</div>
+	
+	<div class="item list">
+		<div class="sprice"><span>外包人力服务费</span><span class="num">--</span>元</div>
+		<div class="hprice"><span>话费</span><span class="num">--</span>元</div>
+	</div>
+	<div class="item total">
+		<div class="tprice"><span>费用总计</span><span class="num">--</span>元</div>
+	</div>
+	<div class="footer display_flex flex_c">
+		<div class="flex_1 btn-order create-order" onclick="">下一步</div>
+	</div>
+</div>
+<script>
+
+	document.querySelector(".create-order").onclick = function (e) {
+		window.location.href = 'step2.html';
+    };
+	
+	//减数量按钮
+	document.querySelector(".Customer .BtnNumDown").onclick = function (e) {
+		e.stopPropagation();
+		var intCurNum = parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
+		var step = parseInt(document.querySelector(".Customer .BuyNum").parentElement.getAttribute("data-step"));
+		if(intCurNum > step) {
+			document.querySelector(".Customer .BuyNum").innerHTML = parseInt(intCurNum-step);
+		}else{
+			document.querySelector(".Customer .BuyNum").innerHTML = step;
+		}
+		updateGoodsTotalPrice();
+	};
+	
+	//加数量按钮
+	document.querySelector(".Customer .BtnNumUp").onclick = function (e) {
+		e.stopPropagation();
+		var intCurNum = parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
+		var step = parseInt(document.querySelector(".Customer .BuyNum").parentElement.getAttribute("data-step"));
+		if(intCurNum){
+			document.querySelector(".Customer .BuyNum").innerHTML  = parseInt(intCurNum+step);
+		}
+		updateGoodsTotalPrice();
+	};
+	
+		//减数量按钮
+	document.querySelector(".Time .BtnNumDown").onclick = function (e) {
+		e.stopPropagation();
+		var intCurNum = parseInt(document.querySelector(".Time .BuyNum").innerHTML);
+		var step = parseInt(document.querySelector(".Time .BuyNum").parentElement.getAttribute("data-step"));
+		if(intCurNum > step) {
+			document.querySelector(".Time .BuyNum").innerHTML = parseInt(intCurNum-step);
+		}else{
+			document.querySelector(".Time .BuyNum").innerHTML = step;
+		}
+		updateGoodsTotalPrice();
+	};
+	
+	//加数量按钮
+	document.querySelector(".Time .BtnNumUp").onclick = function (e) {
+		e.stopPropagation();
+		var intCurNum = parseInt(document.querySelector(".Time .BuyNum").innerHTML);
+		var step = parseInt(document.querySelector(".Time .BuyNum").parentElement.getAttribute("data-step"));
+		if(intCurNum){
+			document.querySelector(".Time .BuyNum").innerHTML  = parseInt(intCurNum+step);
+		}
+		updateGoodsTotalPrice();
+	};
+	
+	updateGoodsTotalPrice();
+	function updateGoodsTotalPrice() {
+            
+		var Customer =  parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
+		var Time =  parseInt(document.querySelector(".Time .BuyNum").innerHTML);
+		
+		document.querySelector(".need .num").innerHTML = Math.ceil(Customer/Time/1200);
+		document.querySelector(".sprice .num").innerHTML = Math.ceil(Customer/1200*400);
+		document.querySelector(".hprice .num").innerHTML = Math.ceil(Customer*0.1);
+		document.querySelector(".tprice .num").innerHTML = Math.ceil(Customer/1200*400) + Math.ceil(Customer*0.1);
+    }
+	
+</script>
+
+
+</body></html>

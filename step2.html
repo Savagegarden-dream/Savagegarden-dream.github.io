@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>信士电话销售外包</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+		<style>
+			body,html{
+				background:#fff;
+			}
+			.index{
+				position: relative;
+				padding-bottom:70px;
+			}
+			
+			.temp_list{
+				text-align:center;
+			}
+			
+			.temp_list>div{
+				padding:15px 20px;
+			}
+
+			.footer{
+				position:fixed;
+				left:0;
+				right:0;
+				bottom:0;
+				background:#fff;
+				z-index:9999;
+				border-top:1px solid #ff9934;
+			}
+
+			.footer>div{				
+				padding:15px 10px;
+				text-align:center;
+			}
+			.btn-back{
+				
+			}
+			.btn-order {
+				color:#fff;
+				background:#ff9934;
+			}
+			
+			.tips{
+				padding:10px;
+				font-size:14px;
+			}
+			
+			.name{
+				padding:10px;
+				font-size:16px;
+			}
+			.pop{
+				position:fixed;
+				background:rgba(0, 0, 0, 0.7);
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				z-index:100000;
+			}
+			.pop img{
+				padding:50px 10px 10px;
+			}
+
+    </style>
+</head>
+<body>
+<div class="index">
+	<div style="position:relative;">
+		<img src="./images/step2-1.jpg">
+	</div>
+	
+	<div class="temp_list display_flex flex_c">
+		<div class="flex_1 temp-1">
+			<label for="temp_1">
+			<img src="./images/temp-1.jpg"/>
+			<div class="tips">点击放大查看</div>
+			<input type="radio" name="temp" id="temp_1" value="1" checked >
+			<div class="name">模板一</div>
+			</label >
+		</div>
+		<div class="flex_1 temp-2">
+			<label for="temp_2">
+			<img src="./images/temp-1.jpg"/>
+			<div  class="tips">点击放大查看</div>
+			<input type="radio" name="temp" id="temp_2" value="2">
+			<div class="name">模板二</div>
+			</label >
+		</div>
+	</div>
+	
+	<div class="pop pop-temp-1" style="display:none">
+		<img src="./images/temp-1.jpg"/>
+	</div>
+	
+	<div class="pop pop-temp-2" style="display:none">
+		<img src="./images/temp-2.jpg"/>
+	</div>
+	
+	<div class="footer display_flex flex_c">
+		<div class="flex_1 " onclick="">上一步</div>
+		<div class="flex_1 btn-order create-order" onclick="">下一步</div>
+	</div>
+</div>
+<script>
+
+	document.querySelector(".create-order").onclick = function (e) {
+		window.location.href = 'step3.html';
+    };
+	
+	document.querySelector(".temp-1 img").onclick = function (e) {
+		document.querySelector(".pop-temp-1").style.display = 'block';
+		document.querySelector(".pop-temp-2").style.display = 'none';
+    };
+	
+	document.querySelector(".temp-2 img").onclick = function (e) {
+		document.querySelector(".pop-temp-2").style.display = 'block';
+		document.querySelector(".pop-temp-1").style.display = 'none';
+    };
+	
+	document.querySelector(".pop-temp-1").onclick = function (e) {
+		document.querySelector(".pop-temp-1").style.display = 'none';
+		document.querySelector(".pop-temp-2").style.display = 'none';
+    };
+	document.querySelector(".pop-temp-2").onclick = function (e) {
+		document.querySelector(".pop-temp-1").style.display = 'none';
+		document.querySelector(".pop-temp-2").style.display = 'none';
+    };
+</script>
+
+
+</body></html>
