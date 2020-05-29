@@ -99,7 +99,7 @@
 		<div class="Customer NumBtn" data-step="1000">
 			<span>您需要沟通的客户数量 </span>
 			<span class="BtnNumDown" onclick=""></span>
-			<span class="BuyNum">3000</span>人
+			<span class="BuyNum">5000</span>人
 			<span class="BtnNumUp" onclick=""></span>
 		</div>
 		<div class="Time NumBtn" data-step="1">
@@ -139,7 +139,11 @@
 		var intCurNum = parseInt(document.querySelector(".Customer .BuyNum").innerHTML);
 		var step = parseInt(document.querySelector(".Customer .BuyNum").parentElement.getAttribute("data-step"));
 		if(intCurNum > step) {
-			document.querySelector(".Customer .BuyNum").innerHTML = parseInt(intCurNum-step);
+			if(intCurNum-step < 5000) {
+				document.querySelector(".Customer .BuyNum").innerHTML = intCurNum;
+			}else{
+				document.querySelector(".Customer .BuyNum").innerHTML = parseInt(intCurNum-step);
+			}
 		}else{
 			document.querySelector(".Customer .BuyNum").innerHTML = step;
 		}
