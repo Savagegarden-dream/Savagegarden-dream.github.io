@@ -11,7 +11,7 @@
 			}
 			.index{
 				position: relative;
-				padding-bottom:70px;
+				padding-bottom:60px;
 			}
 			
 			.temp_list{
@@ -73,7 +73,15 @@
 				text-align:center;
 				text-decoration: underline;
 			}
-
+			
+			.btn_bottom_order{
+				position: absolute;
+				top: 0%;
+				height: 100%;
+				left: 0%;
+				width: 100%;
+				z-index: 2;
+			}
     </style>
 </head>
 <body>
@@ -111,8 +119,15 @@
 		<div class="flex_1 btn-order create-order" onclick="">下一步</div>
 	</div>
 </div>
+<div style="position:relative;">
+	<img src="./images/step2-2.png">
+	<div class="btn_bottom_order btn_bottom_create-order" onclick=""></div>
+</div>
 <script>
 
+	document.querySelector(".btn_bottom_create-order").onclick = function (e) {
+		window.location.href = 'step3.html';
+    };
 	document.querySelector(".create-order").onclick = function (e) {
 		window.location.href = 'step3.html';
     };

@@ -22,6 +22,7 @@
 				width: 62%;
 				z-index: 2;
 			}
+			
 			.audio_1{
 				position: absolute;
 				top: 26%;
@@ -46,6 +47,23 @@
 				height: 20%;
 				left: 5%;
 				width: 80%;
+				z-index: 2;
+			}
+
+			.btn_bottom_tel{
+				position: absolute;
+				top: 0%;
+				height: 100%;
+				left: 0%;
+				width: 50%;
+				z-index: 2;
+			}
+			.btn_bottom_order{
+				position: absolute;
+				top: 0%;
+				height: 100%;
+				left: 50%;
+				width: 50%;
 				z-index: 2;
 			}
 			
@@ -111,6 +129,11 @@
 		<div class="audio_3" onclick=""></div>
 	</div>
 	<img src="./images/3.jpg">
+	<div style="position:relative;margin-top:50px">
+		<img src="./images/4.png">
+		<div class="btn_bottom_tel tel" onclick=""></div>
+		<div class="btn_bottom_order btn_bottom_create-order" onclick=""></div>
+	</div>
 
 	<div class="footer display_flex flex_c">
 		<div class="flex_1 btn-tel" onclick="">电话咨询</div>
@@ -119,6 +142,10 @@
 </div>
 <script>
 
+	document.querySelector(".tel").onclick = function (e) {
+		window.location.href = 'tel:18616814422';
+		MtaH5.clickStat("btntel");
+    };
 	document.querySelector(".btn-tel").onclick = function (e) {
 		window.location.href = 'tel:18616814422';
 		MtaH5.clickStat("btntel");
@@ -128,7 +155,10 @@
 		window.location.href = 'step1-1.html';
 		MtaH5.clickStat("btnnext");
     };
-	
+	document.querySelector(".btn_bottom_create-order").onclick = function (e) {
+		window.location.href = 'step1-1.html';
+		MtaH5.clickStat("btnnext");
+    };
 	document.querySelector(".btn_create-order").onclick = function (e) {
 		window.location.href = 'step1-1.html';
 		MtaH5.clickStat("btnnext");

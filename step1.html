@@ -11,12 +11,12 @@
 			}
 			.index{
 				position: relative;
-				padding-bottom:70px;
+				padding-bottom:60px;
 			}
 			
 			.need .desc{
 				font-size:12px;
-				color:#999;
+				<!--color:#999;-->
 			}
 			.footer{
 				position:fixed;
@@ -88,6 +88,15 @@
 			.total .num{
 				font-size:24px;
 			}
+			
+			.btn_bottom_order{
+				position: absolute;
+				top: 0%;
+				height: 100%;
+				left: 0%;
+				width: 100%;
+				z-index: 2;
+			}
     </style>
 </head>
 <body>
@@ -113,7 +122,7 @@
 	
 	<div class="item need">
 		<div style="font-weight:bold;"><span>系统计算，您需要坐席数量为</span><span class="num">--</span>人天</div>
-		<div class="desc">（每个外包坐席触达客户 1000个/天，每个外包坐席收费 450元/人天）</div>
+		<div class="desc">（沟通客户数5000个起订。每个外包坐席触达客户 1000个/天，每个外包坐席收费 450元/人天）</div>
 	</div>
 	
 	<div class="item list">
@@ -127,8 +136,15 @@
 		<div class="flex_1 btn-order create-order" onclick="">下一步</div>
 	</div>
 </div>
+<div style="position:relative;">
+	<img src="./images/step1-2.png">
+	<div class="btn_bottom_order btn_bottom_create-order" onclick=""></div>
+</div>
 <script>
 
+	document.querySelector(".btn_bottom_create-order").onclick = function (e) {
+		window.location.href = 'step2.html';
+    };
 	document.querySelector(".create-order").onclick = function (e) {
 		window.location.href = 'step2.html';
     };
